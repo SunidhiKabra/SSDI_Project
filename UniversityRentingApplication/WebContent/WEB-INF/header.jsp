@@ -25,7 +25,25 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <h1 class="w3-text-white">University Renting Application1</h1>
+      <h1 class="w3-text-white">University Renting Application</h1>
     </li>
   </ul>
 </nav>
+<br>
+	<center>
+		<h1 class="display1"> Home Page </h1> 
+	</center>
+<div class="w3">
+	<div>
+		<a href = "viewItems.do">
+			<button>
+				<h4>View Item</h4>
+			</button>
+ 		</a>
+		<a href = "AddItem.jsp">
+			<button>
+				<h4>Add Item</h4>
+			</button>
+ 		</a>
+	</div>
+</div>

@@ -14,10 +14,16 @@
 
 		<tr>
 			<td valign="top">${item.getName()}</td>
-		<tr>
+		
 			<td valign="top">${item.getDescription()}</td>
-		<tr>
+
 			<td valign="top">${item.getRent()}</td>
+			
+			<td> <a href = "contactRenters.do">
+			<button>
+				<h4>Contact Renter</h4>
+			</button>
+ 		</a> </td>
 		</tr>
 
 	</c:forEach>

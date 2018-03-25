@@ -19,6 +19,7 @@ public class Controller extends HttpServlet {
 	public void init() throws ServletException {
 		DAO dao = new DAO();
 		Action.add(new ViewItemController(dao));
+		Action.add(new HomePageController());
 
 		begin = false;
 	}
@@ -54,18 +55,21 @@ public class Controller extends HttpServlet {
 		// begin = true;
 		// return Action.perform("setup.do", request);
 		// }
-/*		if (action.equals("register.do") || action.equals("login.do") || action.equals("viewOtherUsers.do")
+	if (action.equals("login.do") || action.equals("viewOtherUsers.do")
 				|| action.equals("viewOtherUsersFav.do") || action.equals("otherFavClickCount.do")
 				|| action.equals("loggedOut.do")) {
 			// Allow these actions without logging in
 			return Action.perform(action, request);
 		}
+	/*			
 
 		if (user == null) {
 			// If the user hasn't logged in, so login is the only option
 			return Action.perform("login.do", request);
 		}
 */
+		
+		
 		// Let the logged in user run his chosen action
 		return Action.perform(action, request);
 	}
