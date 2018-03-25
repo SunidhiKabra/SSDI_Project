@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>UniversityRentingApplication</display-name>
-<!--   <welcome-file-list>
+  <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -11,7 +11,7 @@
   </welcome-file-list>
   
 
-	<servlet>
+ 	<servlet>
 		<servlet-name>CustomerController</servlet-name>
 		<servlet-class>api.CustomerController</servlet-class>
 	</servlet>
@@ -29,8 +29,8 @@
 	<servlet-mapping>
 		<servlet-name>ItemController</servlet-name>
 		<url-pattern>/ItemController</url-pattern>
-	</servlet-mapping> -->
-
+	</servlet-mapping> 
+<!-- 
   	<servlet>
 		<servlet-name>URA</servlet-name>
 		<servlet-class>api.Controller</servlet-class>
@@ -43,6 +43,6 @@
 
 	<welcome-file-list>
 		<welcome-file>homePage.do</welcome-file>
-	</welcome-file-list>
-
+	</welcome-file-list> 
+-->
 </web-app>

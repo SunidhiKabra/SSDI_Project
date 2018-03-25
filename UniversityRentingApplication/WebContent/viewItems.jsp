@@ -21,7 +21,7 @@
 			
 			<td> <a href = "viewRenter.do">
 			<button>
-				<h4>Contact Renter</h4>
+				Contact Renter
 			</button>
  		</a> </td>
 		</tr>
