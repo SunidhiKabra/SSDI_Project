@@ -23,7 +23,7 @@ public class CustomerService implements ICustomerService{
 
 	@Override
 	public List<Customer> getCustomers() {
-		return customer_dao.getCustomer();
+		return customer_dao.getCustomers();
 	}
 
 }

@@ -20,7 +20,7 @@ public class Controller extends HttpServlet {
 		DAO dao = new DAO();
 		Action.add(new ViewItemController(dao));
 		Action.add(new HomePageController());
-
+		Action.add(new ViewRenterController(dao));
 		begin = false;
 	}
 

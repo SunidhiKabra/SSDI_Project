@@ -2,9 +2,10 @@ package dao;
 
 import java.util.List;
 
-import model.Customer;
+import model.*;
 
 public interface ICustomerDao {
 	public void addCustomer(Customer customer);
-	public List<Customer> getCustomer();
+	public ICustomer getCustomer(String email);
+	public List<Customer> getCustomers();
 }

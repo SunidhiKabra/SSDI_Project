@@ -19,7 +19,7 @@
 
 			<td valign="top">${item.getRent()}</td>
 			
-			<td> <a href = "contactRenters.do">
+			<td> <a href = "viewRenter.do">
 			<button>
 				<h4>Contact Renter</h4>
 			</button>
