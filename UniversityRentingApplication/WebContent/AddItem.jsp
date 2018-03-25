@@ -29,13 +29,28 @@
     </li>
   </ul>
 </nav>
-
-<div class="container">
-<form name="form" action="ItemController" method="get">
-	</br>
+<br>
 	<center>
 		<h1 class="display1"> Home Page </h1> 
 	</center>
+<div class="w3">
+	<div>
+		<a href = "ViewItem.jsp">
+			<button>
+				<h4>View Item</h4>
+			</button>
+ 		</a>
+		<a href = "AddItem.jsp">
+			<button>
+				<h4>Add Item</h4>
+			</button>
+ 		</a>
+	</div>
+</div>
+<br>
+<br>
+<div class="container">
+<form name="form" action="ItemController" method="get">
 	<div class="form-group">
 		<label for="ItemName">Item Name</label>
 		<input type="text" class="form-control" id="itemName" placeholder="Item Name" name="itemName">

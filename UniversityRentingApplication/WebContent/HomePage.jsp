@@ -30,7 +30,9 @@
   </ul>
 </nav>
 <br>
-<br>
+	<center>
+		<h1 class="display1"> Home Page </h1> 
+	</center>
 <div class="w3">
 	<div>
 		<a href = "ViewItem.jsp">

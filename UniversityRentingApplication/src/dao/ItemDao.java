@@ -22,7 +22,7 @@ public class ItemDao implements IItemDao{
 		PreparedStatement statement = null;
 		try {
 			con = ConnectionUtility.getConnection(conn_data);
-			String sql = "Insert into item values (?,?,?)";
+			String sql = "Insert into item values (2,?,?,?)";
 			statement = con.prepareStatement(sql);
 			statement.setString(1, item.getItemName());
 			statement.setString(2, item.getItemDescription());
