@@ -7,15 +7,15 @@ import utilities.ConnectionData;
 public class DAO {
 	private ConnectionData conn_data = new ConnectionData();
 	
-	private ItemDAO itemDAO;
+	private ItemDao itemDAO;
 	
 	public DAO() 
 	{
 		
-		itemDAO = new ItemDAO(conn_data); 
+		itemDAO = new ItemDao(conn_data); 
 
 	}
-	public ItemDAO getItemDAO() {
+	public ItemDao getItemDAO() {
 		return itemDAO;
 	}
 

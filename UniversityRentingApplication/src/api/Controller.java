@@ -18,7 +18,7 @@ public class Controller extends HttpServlet {
 
 	public void init() throws ServletException {
 		DAO dao = new DAO();
-		Action.add(new ItemController(dao));
+		Action.add(new ViewItemController(dao));
 
 		begin = false;
 	}
