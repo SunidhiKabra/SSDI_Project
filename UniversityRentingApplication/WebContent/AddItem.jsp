@@ -35,7 +35,7 @@
 	</center>
 <div class="w3">
 	<div>
-		<a href = "ViewItem.jsp">
+		<a href = "viewItems.do">
 			<button>
 				<h4>View Item</h4>
 			</button>

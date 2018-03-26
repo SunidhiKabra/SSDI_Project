@@ -39,16 +39,13 @@ public class ItemController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
-		
+
 		Item i = new Item();
 		ItemDao iDao = new ItemDao();
 		i.setName(req.getParameter("itemName"));
 		i.setDescription(req.getParameter("itemDescription"));
 		i.setRent(Float.parseFloat(req.getParameter("itemRent")));
-		System.out.println("item sent to dao");
 		iDao.addItem(i);
-		System.out.println("item received from dao");
+		resp.sendRedirect("homePage.jsp");
 	}
 }

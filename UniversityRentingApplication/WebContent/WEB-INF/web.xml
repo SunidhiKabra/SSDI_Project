@@ -29,9 +29,10 @@
 	<servlet-mapping>
 		<servlet-name>ItemController</servlet-name>
 		<url-pattern>/ItemController</url-pattern>
-	</servlet-mapping> 
-<!-- 
-  	<servlet>
+	</servlet-mapping>   
+	 
+
+ <!--  	<servlet>
 		<servlet-name>URA</servlet-name>
 		<servlet-class>api.Controller</servlet-class>
 	</servlet>
@@ -43,6 +44,5 @@
 
 	<welcome-file-list>
 		<welcome-file>homePage.do</welcome-file>
-	</welcome-file-list> 
--->
-</web-app>
+	</welcome-file-list>     -->
+</web-app> 

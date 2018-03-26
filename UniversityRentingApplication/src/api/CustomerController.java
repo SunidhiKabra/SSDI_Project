@@ -37,7 +37,6 @@ public class CustomerController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
 		
 		Customer cust = new Customer();
 		CustomerDao custDao = new CustomerDao();
@@ -47,5 +46,6 @@ public class CustomerController extends HttpServlet {
 		cust.setPassword(req.getParameter("password"));
 		cust.setPhoneNumber(req.getParameter("phoneNumber"));
 		custDao.addCustomer(cust);
+		resp.sendRedirect("login.jsp");
 	}
 }
