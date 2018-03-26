@@ -21,6 +21,8 @@ public class Controller extends HttpServlet {
 		Action.add(new ViewItemController(dao));
 		Action.add(new HomePageController());
 		Action.add(new ViewRenterController(dao));
+		Action.add(new LoginController(dao));
+		Action.add(new LogoutController());
 		begin = false;
 	}
 
@@ -46,31 +48,31 @@ public class Controller extends HttpServlet {
 		String servletPath = request.getServletPath();
 		// get it from session
 
+		ICustomer loggedInUser = (ICustomer) session.getAttribute("loggedInUser");
+
 		// UserBean user = (UserBean) session.getAttribute("user");
 		// temp need to create session
 		String user = null;
 		String action = getActionName(servletPath);
+		
 		// add user favorites
 		// if (begin == false) {
 		// begin = true;
 		// return Action.perform("setup.do", request);
 		// }
-	if (action.equals("login.do") || action.equals("viewOtherUsers.do")
-				|| action.equals("viewOtherUsersFav.do") || action.equals("otherFavClickCount.do")
-				|| action.equals("loggedOut.do")) {
+		
+		if (action.equals("signUp.do")) {
 			// Allow these actions without logging in
 			return Action.perform(action, request);
 		}
-	/*			
 
-		if (user == null) {
+		if (loggedInUser == null) {
 			// If the user hasn't logged in, so login is the only option
 			return Action.perform("login.do", request);
 		}
-*/
-		
-		
+
 		// Let the logged in user run his chosen action
+		request.setAttribute("loggedInUser", loggedInUser);
 		return Action.perform(action, request);
 	}
 
@@ -92,7 +94,7 @@ public class Controller extends HttpServlet {
 		}
 
 		if (nextPage.endsWith(".jsp")) {
-		//	RequestDispatcher d = request.getRequestDispatcher("WEB-INF/" + nextPage);
+			// RequestDispatcher d = request.getRequestDispatcher("WEB-INF/" + nextPage);
 			RequestDispatcher d = request.getRequestDispatcher(nextPage);
 			d.forward(request, response);
 			return;

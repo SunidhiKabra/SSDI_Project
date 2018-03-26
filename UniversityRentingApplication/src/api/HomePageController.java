@@ -2,7 +2,8 @@ package api;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class HomePageController extends Action{
+
+public class HomePageController extends Action {
 
 	@Override
 	public String getName() {

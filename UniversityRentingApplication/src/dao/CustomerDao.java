@@ -66,6 +66,7 @@ public class CustomerDao implements ICustomerDao {
 				customer.setLastName(rs.getString("lastName"));
 				customer.setEmail(rs.getString("email"));
 				customer.setPhoneNumber(rs.getString("phoneNumber"));
+				customer.setPassword(rs.getString("password"));
 			}
 			stmt.close();
 			// releaseConnection(con);
