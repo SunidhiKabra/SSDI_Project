@@ -36,14 +36,16 @@
 <br>
 <br>
 
+<jsp:include page="successMessage.jsp" />
+
 <div style="text-align:center" class="w3">
 	<div>
-		<a href = "signUp.jsp">
+		<a href = "signUp.do">
 			<button>
 				<h2>SIGN UP</h2>
 			</button>
  		</a>
-		<a href = "login.jsp">
+		<a href = "login.do">
 			<button>
 				<h2>LOGIN</h2>
 			</button>

@@ -30,8 +30,11 @@
   </ul>
 </nav>
 
+<jsp:include page="errorList.jsp" />
+<jsp:include page="successMessage.jsp" />
+
 <div class="container">
-<form name="form" action="CustomerController" method="get">
+<form name="form" action="signUp.do" method="post">
 	</br>
 	<center>
 		<h1 class="display1"> Sign Up </h1> 
@@ -52,8 +55,8 @@
 	</br>
 	</div>
 	<div class="form-group">
-		<label for="Password">"Password"</label>
-		<input type="text" class="form-control" id="password" placeholder="Password" name="password">
+		<label for="Password">Password</label>
+		<input type="password" class="form-control" id="password" placeholder="Password" name="password">
 	</br>
 	</div>
 	<div class="form-group">
@@ -66,6 +69,4 @@
 </form>
 </div>
 
-
-</body>
-</html>
+<jsp:include page="footer.jsp" />

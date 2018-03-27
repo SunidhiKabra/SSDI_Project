@@ -24,6 +24,7 @@ public class Controller extends HttpServlet {
 		Action.add(new LoginController(dao));
 		Action.add(new LogoutController());
 		Action.add(new AddItemController(dao));
+		Action.add(new SignUpController(dao));
 		begin = false;
 	}
 
