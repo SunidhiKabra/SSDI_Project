@@ -29,10 +29,7 @@ public class ViewItemController extends Action {
 		List<String> errors = new ArrayList<String>();
 		List<IItem> items = itemDAO.getItems();
 		request.setAttribute("errors", errors);
-		request.setAttribute("items", items);
-		
-	
-		
+		request.setAttribute("items", items);	
 		return "viewItems.jsp";
 	}
 

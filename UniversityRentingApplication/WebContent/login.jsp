@@ -56,7 +56,7 @@
 
 			</div>
 			<div class="form-group">
-				<label for="Password">Password</label> <input type="text"
+				<label for="Password">Password</label> <input type="password"
 					class="form-control" id="password" placeholder="password"
 					name="password"> </br>
 				<jsp:include page="errorList.jsp" />

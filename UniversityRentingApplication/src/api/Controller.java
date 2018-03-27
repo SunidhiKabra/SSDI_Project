@@ -23,6 +23,7 @@ public class Controller extends HttpServlet {
 		Action.add(new ViewRenterController(dao));
 		Action.add(new LoginController(dao));
 		Action.add(new LogoutController());
+		Action.add(new AddItemController(dao));
 		begin = false;
 	}
 
@@ -44,27 +45,19 @@ public class Controller extends HttpServlet {
 	 * @return the next page (the view)
 	 */
 	private String performTheAction(HttpServletRequest request) {
-		HttpSession session = request.getSession(true);
-		String servletPath = request.getServletPath();
-		// get it from session
-
-		ICustomer loggedInUser = (ICustomer) session.getAttribute("loggedInUser");
-
-		// UserBean user = (UserBean) session.getAttribute("user");
-		// temp need to create session
-		String user = null;
-		String action = getActionName(servletPath);
 		
-		// add user favorites
-		// if (begin == false) {
-		// begin = true;
-		// return Action.perform("setup.do", request);
-		// }
+		String servletPath = request.getServletPath();	// gets the URL
+		
+		
+		String action = getActionName(servletPath);	// gets the action name from the URL
 		
 		if (action.equals("signUp.do")) {
 			// Allow these actions without logging in
 			return Action.perform(action, request);
 		}
+		HttpSession session = request.getSession(true); 		// request session
+		ICustomer loggedInUser = (ICustomer) session.getAttribute("loggedInUser"); // get value of logged in user from the session
+
 
 		if (loggedInUser == null) {
 			// If the user hasn't logged in, so login is the only option

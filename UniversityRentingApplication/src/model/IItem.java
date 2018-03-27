@@ -10,4 +10,7 @@ public interface IItem {
 	
 	public void setRent(float rent);
 	public float getRent();
+	
+	public void setCustomerId(int customerId);
+	public int getCustomerId();
 }

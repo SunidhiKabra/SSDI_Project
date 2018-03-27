@@ -41,7 +41,7 @@
 				<button>
 					<h4>View Item</h4>
 				</button>
-			</a> <a href="AddItem.jsp">
+			</a> <a href="addItems.jsp">
 				<button>
 					<h4>Add Item</h4>
 				</button>

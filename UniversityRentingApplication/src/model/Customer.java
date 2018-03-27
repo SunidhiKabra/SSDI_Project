@@ -1,9 +1,11 @@
 package model;
 
 public class Customer implements ICustomer{
+	int id;
 	String firstName, lastName, email, password, phoneNumber;
 	
 	public Customer() {
+		this.id = -1;
 		this.firstName = null;
 		this.lastName = null;
 		this.email = null;
@@ -11,7 +13,8 @@ public class Customer implements ICustomer{
 		this.phoneNumber = null;
 	}
 	
-	public Customer(String firstName, String lastName, String email, String password, String phoneNumber) {
+	public Customer(int id, String firstName, String lastName, String email, String password, String phoneNumber) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -57,5 +60,16 @@ public class Customer implements ICustomer{
 	
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public int getID() {
+		return this.id;
+	}
+
+	@Override
+	public void setID(int id) {
+		this.id = id;
+		
 	}
 }

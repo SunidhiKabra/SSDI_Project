@@ -4,6 +4,7 @@ package model;
 public class Item implements IItem{
 	
 	private int id;
+	private int customerId;
 	private String name;
 	private String description;
 	private float rent;
@@ -11,22 +12,25 @@ public class Item implements IItem{
 	public Item()
 	{
 		id = -1;
+		customerId = -1;
 		name = null;
 		description = null;
 		rent = 0.0f;
 	}
 	
-	public Item(int id, String name, String desc, float rent)
+	public Item(int id, int customerId, String name, String desc, float rent)
 	{
 		this.id = id;
+		this.customerId = customerId;
 		this.name = name;
 		this.description = desc;
 		this.rent = rent;
 	}
 	
-	public Item(int id, String name, float rent)
+	public Item(int id, int customerId, String name, float rent)
 	{
 		this.id = id;
+		this.customerId = customerId;
 		this.name = name;
 		this.rent = rent;
 	}
@@ -71,6 +75,16 @@ public class Item implements IItem{
 	public int getItemId()
 	{
 		return this.id;
+	}
+
+	@Override
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	@Override
+	public int getCustomerId() {
+		return this.customerId;
 	}
 
 }

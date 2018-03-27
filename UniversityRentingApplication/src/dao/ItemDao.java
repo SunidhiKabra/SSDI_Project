@@ -29,12 +29,14 @@ public class ItemDao implements IItemDao {
 		Connection con = null;
 		PreparedStatement statement = null;
 		try {
+			
 			con = ConnectionUtility.getConnection(conn_data);
-			String sql = "Insert into item(name, description, rent) values (?,?,?)";
+			String sql = "Insert into item (customerID, name, description, rent) values (?,?,?,?)";
 			statement = con.prepareStatement(sql);
-			statement.setString(1, item.getName());
-			statement.setString(2, item.getDescription());
-			statement.setFloat(3, item.getRent());
+			statement.setInt(1, item.getCustomerId());
+			statement.setString(2, item.getName());
+			statement.setString(3, item.getDescription());
+			statement.setFloat(4, item.getRent());
 			statement.executeUpdate();
 		}
 		catch(Exception e) {
@@ -56,6 +58,7 @@ public class ItemDao implements IItemDao {
 			lstItems = new ArrayList<IItem>();
 			while (rs.next()) {
 				IItem item = new Item();
+				item.setCustomerId(rs.getInt("customerID"));
 				item.setName(rs.getString("name"));
 				item.setDescription(rs.getString("description"));
 				item.setRent(rs.getFloat("rent"));

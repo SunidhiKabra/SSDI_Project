@@ -33,7 +33,7 @@ public class CustomerDao implements ICustomerDao {
 		PreparedStatement statement = null;
 		try {
 			con = ConnectionUtility.getConnection(conn_data);
-			String sql = "Insert into customer values (?,?,?,?,?)";
+			String sql = "Insert into customer (firstName, lastName, emailID, password, phoneNumber) values (?,?,?,?,?)";
 			statement = con.prepareStatement(sql);
 			statement.setString(1, customer.getFirstName());
 			statement.setString(2, customer.getLastName());
@@ -55,16 +55,17 @@ public class CustomerDao implements ICustomerDao {
 			con = ConnectionUtility.getConnection(conn_data);
 			
 			Statement stmt = con.createStatement();
-			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer where email = ?");
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer where emailID = ?");
 			pstmt.setString(1, email);
 			ResultSet rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
 			customer = new Customer();
 				
+				customer.setID(rs.getInt("id"));
 				customer.setFirstName(rs.getString("firstName"));
 				customer.setLastName(rs.getString("lastName"));
-				customer.setEmail(rs.getString("email"));
+				customer.setEmail(rs.getString("emailID"));
 				customer.setPhoneNumber(rs.getString("phoneNumber"));
 				customer.setPassword(rs.getString("password"));
 			}
@@ -81,6 +82,41 @@ public class CustomerDao implements ICustomerDao {
 		return customer;
 	}
 
+	@Override
+	public ICustomer getCustomerById(int id) {
+		// TODO Auto-generated method stub
+		Connection con = null;
+		ICustomer customer = null;
+		try {
+			con = ConnectionUtility.getConnection(conn_data);
+			
+			Statement stmt = con.createStatement();
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer where id = ?");
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+			customer = new Customer();
+				
+				customer.setID(rs.getInt("id"));
+				customer.setFirstName(rs.getString("firstName"));
+				customer.setLastName(rs.getString("lastName"));
+				customer.setEmail(rs.getString("emailID"));
+				customer.setPhoneNumber(rs.getString("phoneNumber"));
+				customer.setPassword(rs.getString("password"));
+			}
+			stmt.close();
+			// releaseConnection(con);
+
+		} catch (SQLException e) {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException e2) { /* ignore */
+			}
+		}
+		return customer;
+	}
 	@Override
 	public List<Customer> getCustomers() {
 		// TODO Auto-generated method stub
