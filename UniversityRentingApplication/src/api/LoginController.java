@@ -32,6 +32,16 @@ public class LoginController extends Action{
 		List<String> errors = new ArrayList<String>();
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		try {
+			email = request.getParameter("email");
+			password = request.getParameter("password");
+		}catch(NullPointerException e)
+		{
+			e.printStackTrace();
+			email = null;
+			password = null;
+		}
+		
 		if(email == null && password == null)
 		{
 			return "login.jsp";

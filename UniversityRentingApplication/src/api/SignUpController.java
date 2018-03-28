@@ -39,7 +39,7 @@ public class SignUpController extends Action{
 			customerDao.addCustomer(newUser);;
 			success = "User added Successfully";
 			request.setAttribute("message", success);
-			return "index.jsp";
+			return "login.jsp";
 
 		}
 		

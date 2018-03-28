@@ -64,7 +64,7 @@
 		<input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number" name="phoneNumber">
 	</br>
 	</div>
-<input type="submit" class="btn btn-success" value="submit"></input> 
+<input type="submit" class="btn btn-success" value="Submit"></input> 
 <input type="reset" class="btn btn-success" value="Reset"></input>
 </form>
 </div>

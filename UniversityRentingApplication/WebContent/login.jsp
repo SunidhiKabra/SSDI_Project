@@ -25,6 +25,7 @@
 <body>
 
 
+
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white">
 		<a class="navbar-brand" href="index.jsp"> <img src="logo.jpg"
 			alt="logo" style="width: 40px;">
@@ -40,7 +41,7 @@
 
 
 
-
+<jsp:include page="successMessage.jsp" />
 
 	<div class="container">
 		<form name="form" action="login.do" method="post">
@@ -61,8 +62,8 @@
 					name="password"> </br>
 				<jsp:include page="errorList.jsp" />
 			</div>
-			<input type= "submit" value="Submit" class="btn-btn-Success" /> 
-			<input type = "reset" value="Reset" class="btn-btn-Success" />
+			<input type="submit" class="btn btn-success" value="Submit"></input>
+			<input type="reset" class="btn btn-success" value="Reset"></input>
 
 		</form>
 	</div>
