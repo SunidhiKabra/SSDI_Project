@@ -30,12 +30,23 @@ public class LoginController extends Action{
 	public String perform(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		List<String> errors = new ArrayList<String>();
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+
+//		String email = request.getParameter("email");
+//		String password = request.getParameter("password");
+//		try {
+//			email = request.getParameter("email");
+//			password = request.getParameter("password");
+//		}catch(NullPointerException e)
+
+		
+		String email = null;
+		String password = null;
 		try {
 			email = request.getParameter("email");
 			password = request.getParameter("password");
-		}catch(NullPointerException e)
+		}
+		catch(NullPointerException e)
+
 		{
 			e.printStackTrace();
 			email = null;
