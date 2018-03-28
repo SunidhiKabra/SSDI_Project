@@ -18,7 +18,7 @@ public class TestAccountCreation {
 	public void returnExpectedCustomerObject() {
 		
 		int id = 4;
-		String fname = "rohan";
+		String fname = "Rohan";
 		String lname = "kapoor";
 		String email = "r@uncc.edu";
 		String password = "pass";
