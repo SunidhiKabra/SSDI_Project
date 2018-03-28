@@ -93,8 +93,8 @@ public class SignUpController extends Action{
 		if (phoneNumber == null || phoneNumber.length() == 0) {
 			errors.add("Phone number is required");
 		}
-		else if (!Helper.isInteger(phoneNumber)) {
-			errors.add("Phone number has to be numeric");
+		else if (!Helper.isLong(phoneNumber)) {
+			errors.add("Phone number has to be numeric. No hypens/brackets");
 		}
 		
 		if (errors.size() > 0)

@@ -23,6 +23,18 @@ public class Helper {
 		return isInteger;
 	}
 	
+	
+	public static boolean isLong(String number)
+	{
+		boolean isLong = true;
+		try{
+	        Long.parseLong(number);
+	    }catch(NumberFormatException e){
+	        isLong = false;
+	    }
+		
+		return isLong;
+	}
 	public static String sanitize(String s) {
 		if(s != null) {
 			return s.replace("&", "&amp;").replace("<", "&lt;")
