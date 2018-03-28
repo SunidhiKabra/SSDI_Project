@@ -23,11 +23,15 @@ public class TestLogIn {
 		assertEquals(expectedPageToBeOn, result);
 	}
 	
-	
 	@Test
-	public void checkIfDatabaseIsAddingDataAndGettingData() {
-		Customer c = new Customer(1, "Rohan","Kapoor","rk@uncc.edu", "pass", "1234");
-		
-		
+	public void returnWebPageAction() {
+		DAO d = new DAO();
+		LoginController lc = new LoginController(d);
+		String expectedPageToBeOn = "login.do";
+		String result = lc.getName();
+		assertEquals(expectedPageToBeOn, result);
 	}
+	
+	
+	
 }
