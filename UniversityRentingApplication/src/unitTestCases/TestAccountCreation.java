@@ -19,7 +19,7 @@ public class TestAccountCreation {
 		
 		int id = 4;
 		String fname = "Rohan";
-		String lname = "kapoor";
+		String lname = "Kapoor";
 		String email = "r@uncc.edu";
 		String password = "pass";
 		String phone = "123456";
